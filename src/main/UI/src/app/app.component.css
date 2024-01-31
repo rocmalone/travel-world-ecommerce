@@ -1,0 +1,70 @@
+mat-sidenav {
+  margin: 16px;
+  width: 100px;
+  border-right: none;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  min-height: 930px;
+}
+
+.content {
+  min-height: 930px;
+  border-radius: 10px;
+  margin: 16px;
+  margin-left: 32px;
+
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+
+  font-size: 1.3rem;
+}
+
+mat-sidenav-container {
+  height: auto;
+  /*margin-top: 10vh;*/
+  overflow: hidden;
+  padding-left: 8vw;
+  padding-right: 8vw;
+}
+
+.icon-display {
+  transform: scale(2);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.mat-drawer {
+  height: 60vh;
+}
+
+.header-image {
+  width: auto;
+  height: 200px;
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #F8F8F8;
+  background-color: #273844;
+  height: 75px;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+}
+
+.footer a {
+  color: #F8F8F8;
+}

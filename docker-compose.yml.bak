@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  # Frontend service
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: frontend.Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - travel-net
+
+  # Backend service
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_USER: ecommerceapp
+      SPRING_DATASOURCE_PASSWORD: ecommerceapp
+      SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/full-stack-ecommerce?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    depends_on:
+      - database
+    networks:
+      - travel-net
+
+  # Database service
+  database:
+    container_name: database
+    build:
+      context: .
+      dockerfile: database.Dockerfile
+    ports:
+      - "3306:3306"
+    environment:
+      -MYSQL_ROOT_PASSWORD: root
+      -MYSQL_DATABASE: full-stack-ecommerce
+      -MYSQL_USER: ecommerceapp
+      -MYSQL_PASSWORD: ecommerceapp
+      -MYSQL_PORT: 3306
+    networks:
+      - travel-net
+
+networks:
+  travel-net:
+    driver: bridge

@@ -1,0 +1,23 @@
+<img src="assets/logo.png" alt="Description of the image" class="header-image">
+<mat-sidenav-container>
+  <mat-sidenav id="nav-bar" class="mat-elevation-z8">
+    <button mat-button class="menu-button">
+        <mat-icon class="icon-display" routerLink="/customer">person</mat-icon>
+    </button>
+    <button mat-button class="menu-button">
+        <mat-icon class="icon-display" routerLink="/vacation">shopping_cart</mat-icon>
+    </button>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<div class="footer">
+  <div>© Travel World 2023-2024, All rights reserved. <a href="">Privacy Notice</a> | <a href="">Terms of Use</a> | <a href="">Booking Terms & Conditions</a></div>
+  <div>Travel World is fictional; this website is a demonstration project by Alexander Conger. See more of my work at <a href="alexconger.dev">alexconger.dev</a> and <a href="https://www.linkedin.com/in/alexconger/">connect with me on LinkedIn</a>.</div>
+
+</div>
